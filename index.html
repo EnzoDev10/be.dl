@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>BE.dl</title>
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/" rel="home"
+					><img src="images/logo.svg" alt="YoutuBE.dl"
+				/></a>
+			</h1>
+			<button
+				class="mobile-menu-toggle"
+				aria-label="navigation menu"
+				aria-expanded="false"
+				aria-controls="primaryNav"
+			>
+				<img src="images/ham-icon.svg" aria-hidden="true" />
+			</button>
+
+			<nav class="mobile-nav">
+				<ul>
+					<li class="nav-item"><a href="#footer">Contacto</a></li>
+					<li class="nav-item"><a href="#extension">Extensión</a></li>
+					<li class="nav-item">
+						<button class="dropdown-toggle">
+							Idiomas <img src="images/arrow.svg" alt="" />
+						</button>
+						<ul class="dropdown-menu">
+							<li class="dropdown-item">
+								<button class="language" id="spanish">
+									<img src="images/spanish.svg" alt="spanish flag" />
+								</button>
+							</li>
+							<li class="dropdown-item">
+								<button class="language" id="english">
+									<img src="images/english.svg" alt="american flag" />
+								</button>
+							</li>
+							<li class="dropdown-item">
+								<button class="language" id="portuguese">
+									<img src="images/portuguese.svg" alt="brazilian flag" />
+								</button>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<nav class="desktop-nav hidden">
+				<ul>
+					<li class="nav-item"><a href="#footer">Contacto</a></li>
+					<li class="nav-item"><a href="#extension">Extensión</a></li>
+					<li class="nav-item">
+						<button class="dropdown-toggle">
+							Idiomas <img src="images/arrow.svg" alt="" />
+						</button>
+						<ul class="dropdown-menu">
+							<li class="dropdown-item">
+								<button class="language" id="spanish">
+									<img src="images/spanish.svg" alt="spanish flag" />
+								</button>
+							</li>
+							<li class="dropdown-item">
+								<button class="language" id="english">
+									<img src="images/english.svg" alt="american flag" />
+								</button>
+							</li>
+							<li class="dropdown-item">
+								<button class="language" id="portuguese">
+									<img src="images/portuguese.svg" alt="brazilian flag" />
+								</button>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="hero">
+				<div class="container">
+					<h2>YoutuBE.dl</h2>
+					<p>
+						Descarga tus videos favoritos de una manera rápida y sencilla, con
+						la tranquilidad de un proceso seguro y libre de complicaciones ni
+						registros. ¡Solo pega el enlace y listo!
+					</p>
+					<div class="input-wrapper">
+						<input
+							type="text"
+							id="url-input"
+							placeholder="Pegue aqui el enlace de su video"
+							aria
+						/>
+						<button
+							class="btn input-btn absolute"
+							id="input-btn"
+							aria-label="Download video"
+						>
+							<img src="images/download-icon.svg" aria-hidden="true" />
+						</button>
+					</div>
+					<p>Descarga videos de youtube solo con un click!</p>
+				</div>
+			</section>
+			<div id="modal" class="">
+				<div id="thumbnail">
+					<img src="images/thumbnail.svg" alt="" class="remove-this" />
+				</div>
+				<p id="video-title">
+					Criminólogo da las claves de por qué actualmente NO hay asesinos en
+					serie
+				</p>
+
+				<img src="images/channel-preview.svg" alt="" />
+
+				<div class="author-channel ">
+					<div class="round" id="author-profile"></div>
+					<div>
+						<strong id="author-channel">The Wild Project</strong>
+						<div>
+							<p id="author-id">@TheWildProject</p>
+							<p id="author-subs">5.29 M de subscriptores</p>
+							<p id="author-videos">7.1 k videos</p>
+						</div>
+						<p id="author-desc">CADA MARTES Y JUEVES NUEVOS EPISODIOS ></p>
+
+						<p id="author-links">
+							<span class="blue-text">spoti.fi/3cA2fy y 6 vinculos más</span>
+						</p>
+					</div>
+					<div id="author-buttons">
+						<div id="sub-btn" class="btn">
+							<img src="" alt="" />
+							<!-- Bell icon -->
+							<p>Suscrito</p>
+							<img src="" alt="" />
+							<!-- down arrow icon -->
+						</div>
+						<div id="join-btn" class="btn">
+							<p>Unirse</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="download-file">
+					<select class="dropdown-menu formats-menu">
+						<option value="">Elije una opción</option>
+						<option value="1080p" id="1080p">1080p (.mp4) full HD</option>
+						<option value="720p" id="720p">720p (.mp4)</option>
+						<option value="480p" id="480p">480p (.mp4)</option>
+						<option value="360p" id="360p">360p (.mp4)</option>
+					</select>
+
+					<button class="download-btn btn">
+						Descargar
+						<img src="images/download-icon.svg" />
+					</button>
+				</div>
+				<div class="video-info">
+					<h4>Información del archivo</h4>
+					<p>Tamaño: <span id="video-size">890mb</span></p>
+					<p>duración: <span id="video-length">11:17 minutos</span></p>
+				</div>
+			</div>
+
+			<section class="extension">
+				<div class="container">
+					<img src="images/mobile-img.svg" aria-hidden="true" />
+					<h2>En el futuro...</h2>
+					<div class="stores-wrapper">
+						<div>
+							<img src="images/apple-logo.svg" alt="Apple app store" />
+							<p>App store</p>
+						</div>
+						<div>
+							<img src="images/play-store-icon.svg" alt="Google Play Store" />
+							<p>Google Play</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="card contact-card">
+					<h4>Contacto</h4>
+					<a href="mailto:beagency@gmail.com">beagency@gmail.com</a>
+				</div>
+				<div class="card attributions">
+					<h4>Atribuciones</h4>
+					<a href="https://lovepik.com/images/creative-3d-icon.html"
+						>3d Icon Png vectors by Lovepik.com</a
+					>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
