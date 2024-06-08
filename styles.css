@@ -1,3 +1,12 @@
+/* colors */
+/* Used on input and download button  */
+/* Used on the images of the apps and extension section */
+/* Used on modal and mobile menu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .hidden {
   height: 0;
   opacity: 0;

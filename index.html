@@ -3,11 +3,18 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;500&family=Oxygen:wght@700&family=Yantramanav:wght@300;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="fonts.css" />
 		<link rel="stylesheet" href="styles.css" />
 		<title>BE.dl</title>
 	</head>
 	<body>
-		<header>
+		<header class="fira-sans-condensed-light">
 			<h1>
 				<a href="/" rel="home"
 					><img src="images/logo.svg" alt="YoutuBE.dl"
@@ -80,10 +87,10 @@
 				</ul>
 			</nav>
 		</header>
-		<main>
+		<main class="yantramanav-light">
 			<section class="hero">
 				<div class="container">
-					<h2>YoutuBE.dl</h2>
+					<h2 class="oxygen-bold">YoutuBE.dl</h2>
 					<p>
 						Descarga tus videos favoritos de una manera rápida y sencilla, con
 						la tranquilidad de un proceso seguro y libre de complicaciones ni
@@ -107,7 +114,7 @@
 					<p>Descarga videos de youtube solo con un click!</p>
 				</div>
 			</section>
-			<div id="modal" class="">
+			<div id="modal" class="fira-sans-condensed-light">
 				<div id="thumbnail">
 					<img src="images/thumbnail.svg" alt="" class="remove-this" />
 				</div>
@@ -116,9 +123,9 @@
 					serie
 				</p>
 
-				<img src="images/channel-preview.svg" alt="" />
+				<img src="images/channel-preview.svg" alt="" class="remove-this" />
 
-				<div class="author-channel ">
+				<div class="author-channel">
 					<div class="round" id="author-profile"></div>
 					<div>
 						<strong id="author-channel">The Wild Project</strong>
@@ -162,7 +169,7 @@
 					</button>
 				</div>
 				<div class="video-info">
-					<h4>Información del archivo</h4>
+					<h4 class="fira-sans-condensed-medium">Información del archivo</h4>
 					<p>Tamaño: <span id="video-size">890mb</span></p>
 					<p>duración: <span id="video-length">11:17 minutos</span></p>
 				</div>
@@ -171,7 +178,7 @@
 			<section class="extension">
 				<div class="container">
 					<img src="images/mobile-img.svg" aria-hidden="true" />
-					<h2>En el futuro...</h2>
+					<h2 class="yantramanav-medium">En el futuro...</h2>
 					<div class="stores-wrapper">
 						<div>
 							<img src="images/apple-logo.svg" alt="Apple app store" />
