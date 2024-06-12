@@ -6,8 +6,130 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #fff;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+h1 {
+  max-width: fit-content;
+}
+ul {
+  list-style: none;
+}
+.flex {
+  display: flex;
 }
 .hidden {
+  display: none;
   height: 0;
   opacity: 0;
+}
+.container {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.97);
+}
+header {
+  position: relative;
+  min-height: 80px;
+}
+header .container {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  align-items: start;
+  justify-content: flex-end;
+}
+header .logo {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+header .logo img {
+  width: 60px;
+  height: 60px;
+}
+header .mobile-menu-toggle img {
+  padding-top: 10px;
+  width: 40px;
+  height: 40px;
+}
+.mobile-nav {
+  background-color: rgba(11, 22, 24, 0.9);
+  text-align: left;
+  align-items: center;
+  /* Centers the element and moves it 5% from the top */
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  min-width: 360px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.mobile-nav #closeBtn {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  top: 20px;
+  right: 20px;
+}
+.mobile-nav .menu {
+  width: 100%;
+  padding: 10px;
+}
+.mobile-nav .menu .nav-item {
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: url;
+  width: 80%;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, white, transparent);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+.mobile-nav .menu .lang-menu {
+  height: 1px;
+  width: 1px;
+  background-color: #0b1618;
+}
+.mobile-nav .menu #lang-box {
+  display: none;
+}
+.mobile-nav .menu #lang-box:checked ~ .lang-label ~ .lang-menu {
+  width: fit-content;
+  height: auto;
+  padding: 10px;
+  transition: all 1s ease 0s;
+  margin-left: auto;
+  gap: 10px;
+  align-items: center;
+}
+.mobile-nav .menu #lang-box:checked ~ .lang-label ~ .lang-menu .lang {
+  width: 40px;
+}
+.mobile-nav .menu .lang-label {
+  cursor: pointer;
+}
+.mobile-nav .menu .lang-label img {
+  margin-left: auto;
 }

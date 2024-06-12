@@ -6,15 +6,168 @@
 /* Used on the images of the apps and extension section */
 @dark-bg-color: #002d29;
 /* Used on modal and mobile menu */
-@darker-bg-color: rgba(11, 22, 24, 0.8);
+@darker-bg-color: rgba(11, 22, 24, 0.9);
+
+@lang-color: #0b1618;
+
+@body-bg-color: rgba(0, 0, 0, 0.97);
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: @text-color;
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+button {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+h1 {
+	max-width: fit-content;
+}
+
+ul {
+	list-style: none;
+}
+
+.flex {
+	display: flex;
 }
 
 .hidden {
+	display: none;
 	height: 0;
 	opacity: 0;
+}
+
+.container {
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+body {
+	background-color: @body-bg-color;
+	background-color: @body-bg-color;
+}
+
+header {
+	position: relative;
+	min-height:80px;
+
+	.container {
+		padding-top: 15px;
+		padding-bottom: 25px;
+		align-items: start;
+		justify-content: flex-end;
+	}
+
+	.logo {
+		position: absolute;
+
+		top: 15%;
+		left: 50%;
+		transform: translate(-50%);
+
+		img {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	.mobile-menu-toggle img {
+		padding-top: 10px;
+		width: 40px;
+		height: 40px;
+	}
+}
+
+.mobile-nav {
+	background-color: @darker-bg-color;
+	text-align: left;
+	align-items: center;
+
+	/* Centers the element and moves it 5% from the top */
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translate(-50%, -5%);
+
+	min-width: 360px;
+	padding: 20px;
+	margin-top: 30px;
+	border-radius: 10px;
+
+	#closeBtn {
+		position: absolute;
+		width: 30px;
+		height: auto;
+		top: 20px;
+		right: 20px;
+	}
+
+	.menu {
+		width: 100%;
+		padding: 10px;
+
+		.nav-item {
+			margin-bottom: 30px;
+			padding-bottom: 5px;
+			border-bottom: url;
+			width: 80%;
+			border: 3px solid;
+			border-image-slice: 1;
+			border-image-source: linear-gradient(to right, white, transparent);
+			border-left: 0;
+			border-right: 0;
+			border-top: 0;
+		}
+
+		.lang-menu {
+			height: 1px;
+			width: 1px;
+			background-color: @lang-color;
+		}
+
+		#lang-box {
+			display: none;
+		}
+
+		#lang-box:checked ~ .lang-label ~ .lang-menu {
+			width: fit-content;
+			height: auto;
+			padding: 10px;
+			transition: all 1s ease 0s;
+			margin-left: auto;
+			gap: 10px;
+			align-items: center;
+
+			.lang {
+				width: 40px;
+			}
+		}
+
+		.lang-label {
+			cursor: pointer;
+
+			img {
+				margin-left: auto;
+			}
+		}
+	}
 }

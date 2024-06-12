@@ -1,37 +1,34 @@
-/* const navButton = document.getElementById("hamburgerMenu");
-const disclosure = document.getElementById("primaryNav");
-const listItems = disclosure.querySelectorAll("li a");
+const navBtn = document.querySelector("#mobileMenuToggle");
+const closeBtn = document.querySelector("#closeBtn");
+const disclosure = document.querySelector("#mobileNav");
 
-// Both functions use CSS classes
-// To change the visibility of the menu
-// And also change the aria-expanded attribute
-// To be more accessible
+function openNavigation(toggle, close, menu) {
+	const navBtn = document.getElementById(toggle);
+	const closeBtn = document.getElementById(close);
+	const disclosure = document.getElementById(menu);
 
-function openNavigation() {
-	navButton.setAttribute("aria-expanded", "true");
+	navBtn.setAttribute("aria-expanded", "true");
+	navBtn.classList.add("hidden");
 	disclosure.classList.remove("hidden");
+	closeBtn.classList.remove("hidden");
 }
 
-function closeNavigation() {
-	navButton.setAttribute("aria-expanded", "false");
+function closeNavigation(toggle, close, menu) {
+	const navBtn = document.getElementById(toggle);
+	const closeBtn = document.getElementById(close);
+	const disclosure = document.getElementById(menu);
+
+	navBtn.setAttribute("aria-expanded", "false");
+	navBtn.classList.remove("hidden");
 	disclosure.classList.add("hidden");
+	closeBtn.classList.add("hidden");
 }
 
 // If the menu is closed, it opens, else, it closes.
-function toggleNavigation() {
-	const open = navButton.getAttribute("aria-expanded");
+function toggleNavigation(toggle, close, menu) {
+	const open = document.getElementById(toggle).getAttribute("aria-expanded");
 
-	open === "false" ? openNavigation() : closeNavigation();
+	open === "false"
+		? openNavigation(toggle, close, menu)
+		: closeNavigation(toggle, close, menu);
 }
-
-navButton.addEventListener("click", toggleNavigation);
-
-// Close the menu if the escape key is pressed
-// Only use it if the menu will be visible on desktop
-window.addEventListener("keyup", (e) => {
-	if (e.key === "Escape") {
-		navButton.focus();
-		closeNavigation();
-	}
-});
- */

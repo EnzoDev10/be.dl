@@ -15,105 +15,92 @@
 	</head>
 	<body>
 		<header class="fira-sans-condensed-light">
-			<h1>
-				<a href="/" rel="home"
-					><img src="images/logo.svg" alt="YoutuBE.dl"
-				/></a>
-			</h1>
-			<button
-				class="mobile-menu-toggle"
-				aria-label="navigation menu"
-				aria-expanded="false"
-				aria-controls="primaryNav"
-			>
-				<img src="images/ham-icon.svg" aria-hidden="true" />
-			</button>
+			<div class="container flex">
+				<h1 class="logo">
+					<a href="/" rel="home"
+						><img src="images/logo.svg" alt="YoutuBE.dl"
+					/></a>
+				</h1>
 
-			<nav class="mobile-nav">
-				<ul>
-					<li class="nav-item"><a href="#footer">Contacto</a></li>
-					<li class="nav-item"><a href="#extension">Extensión</a></li>
-					<li class="nav-item">
-						<button class="dropdown-toggle">
-							Idiomas <img src="images/arrow.svg" alt="" />
-						</button>
-						<ul class="dropdown-menu">
-							<li class="dropdown-item">
-								<button class="language" id="spanish">
-									<img src="images/spanish.svg" alt="spanish flag" />
-								</button>
-							</li>
-							<li class="dropdown-item">
-								<button class="language" id="english">
-									<img src="images/english.svg" alt="american flag" />
-								</button>
-							</li>
-							<li class="dropdown-item">
-								<button class="language" id="portuguese">
-									<img src="images/portuguese.svg" alt="brazilian flag" />
-								</button>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
+				<button
+					class="mobile-menu-toggle"
+					id="mobileMenuToggle"
+					aria-label="click to open menu"
+					aria-expanded="false"
+					aria-controls="primaryNav"
+					onclick="toggleNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')"
+				>
+					<img src="images/ham-icon.svg" aria-hidden="true" />
+				</button>
 
-			<nav class="desktop-nav hidden">
-				<ul>
-					<li class="nav-item"><a href="#footer">Contacto</a></li>
-					<li class="nav-item"><a href="#extension">Extensión</a></li>
-					<li class="nav-item">
-						<button class="dropdown-toggle">
-							Idiomas <img src="images/arrow.svg" alt="" />
-						</button>
-						<ul class="dropdown-menu">
-							<li class="dropdown-item">
-								<button class="language" id="spanish">
-									<img src="images/spanish.svg" alt="spanish flag" />
-								</button>
-							</li>
-							<li class="dropdown-item">
-								<button class="language" id="english">
-									<img src="images/english.svg" alt="american flag" />
-								</button>
-							</li>
-							<li class="dropdown-item">
-								<button class="language" id="portuguese">
-									<img src="images/portuguese.svg" alt="brazilian flag" />
-								</button>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
+				<!-- Mobile Nav -->
+				<nav id="mobileNav" class="mobile-nav flex hidden">
+					<button
+						id="closeBtn"
+						class="absolute"
+						aria-label="Click to close menu"
+						onclick="closeNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')
+"
+					>
+						<img src="images/close-icon.svg" />
+					</button>
+					<ul class="menu">
+						<li class="nav-item"><a href="#footer">Contacto</a></li>
+						<li class="nav-item"><a href="#extension">Extensión</a></li>
+						<li class="nav-item">
+							<input type="checkbox" id="lang-box" />
+							<label for="lang-box" class="lang-label flex">
+								Idiomas
+								<img src="images/arrow.svg" />
+							</label>
+							<ul class="lang-menu flex">
+								<!-- Change to buttons and make them functional -->
+								<li class="lang">
+									<button><img src="images/spanish.svg" /></button>
+								</li>
+								<li class="lang">
+									<button><img src="images/english.svg" /></button>
+								</li>
+								<li class="lang">
+									<button><img src="images/portuguese.svg" /></button>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Desktop Nav -->
+				<nav class="desktop-nav hidden">
+					<ul>
+						<li class="nav-item"><a href="#footer">Contacto</a></li>
+						<li class="nav-item"><a href="#extension">Extensión</a></li>
+						<li class="nav-item">
+							<button class="dropdown-toggle">
+								Idiomas <img src="images/arrow.svg" alt="" />
+							</button>
+							<ul class="dropdown-menu">
+								<li class="dropdown-item">
+									<button class="language" id="spanish">
+										<img src="images/spanish.svg" alt="spanish flag" />
+									</button>
+								</li>
+								<li class="dropdown-item">
+									<button class="language" id="english">
+										<img src="images/english.svg" alt="american flag" />
+									</button>
+								</li>
+								<li class="dropdown-item">
+									<button class="language" id="portuguese">
+										<img src="images/portuguese.svg" alt="brazilian flag" />
+									</button>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 		<main class="yantramanav-light">
-			<section class="hero">
-				<div class="container">
-					<h2 class="oxygen-bold">YoutuBE.dl</h2>
-					<p>
-						Descarga tus videos favoritos de una manera rápida y sencilla, con
-						la tranquilidad de un proceso seguro y libre de complicaciones ni
-						registros. ¡Solo pega el enlace y listo!
-					</p>
-					<div class="input-wrapper">
-						<input
-							type="text"
-							id="url-input"
-							placeholder="Pegue aqui el enlace de su video"
-							aria
-						/>
-						<button
-							class="btn input-btn absolute"
-							id="input-btn"
-							aria-label="Download video"
-						>
-							<img src="images/download-icon.svg" aria-hidden="true" />
-						</button>
-					</div>
-					<p>Descarga videos de youtube solo con un click!</p>
-				</div>
-			</section>
 			<div id="modal" class="fira-sans-condensed-light">
 				<div id="thumbnail">
 					<img src="images/thumbnail.svg" alt="" class="remove-this" />
@@ -175,7 +162,34 @@
 				</div>
 			</div>
 
-			<section class="extension">
+			<section class="hero">
+				<div class="container">
+					<h2 class="oxygen-bold">YoutuBE.dl</h2>
+					<p>
+						Descarga tus videos favoritos de una manera rápida y sencilla, con
+						la tranquilidad de un proceso seguro y libre de complicaciones ni
+						registros. ¡Solo pega el enlace y listo!
+					</p>
+					<div class="input-wrapper">
+						<input
+							type="text"
+							id="url-input"
+							placeholder="Pegue aqui el enlace de su video"
+							aria
+						/>
+						<button
+							class="btn input-btn absolute"
+							id="input-btn"
+							aria-label="Download video"
+						>
+							<img src="images/download-icon.svg" aria-hidden="true" />
+						</button>
+					</div>
+					<p>Descarga videos de youtube solo con un click!</p>
+				</div>
+			</section>
+
+			<section id="extension">
 				<div class="container">
 					<img src="images/mobile-img.svg" aria-hidden="true" />
 					<h2 class="yantramanav-medium">En el futuro...</h2>
@@ -192,7 +206,7 @@
 				</div>
 			</section>
 		</main>
-		<footer>
+		<footer id="footer">
 			<div class="container">
 				<div class="card contact-card">
 					<h4>Contacto</h4>
@@ -206,5 +220,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="script.js"></script>
 	</body>
 </html>
