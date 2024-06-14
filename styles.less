@@ -66,9 +66,10 @@ body {
 	background-color: @body-bg-color;
 }
 
+/* Header and mobile nav */
 header {
 	position: relative;
-	min-height:80px;
+	min-height: 80px;
 
 	.container {
 		padding-top: 15px;
@@ -89,14 +90,13 @@ header {
 			height: 60px;
 		}
 	}
-
-	.mobile-menu-toggle img {
-		padding-top: 10px;
-		width: 40px;
-		height: 40px;
-	}
 }
 
+.mobile-menu-toggle img {
+	padding-top: 10px;
+	width: 40px;
+	height: 40px;
+}
 .mobile-nav {
 	background-color: @darker-bg-color;
 	text-align: left;
@@ -169,5 +169,43 @@ header {
 				margin-left: auto;
 			}
 		}
+	}
+}
+
+/* Hero */
+
+.hero {
+	h2 {
+		font-size: 2.5rem;
+	}
+
+	.steps {
+		text-align: left;
+		margin: 15px 0;
+	}
+
+	.input-wrapper {
+		position: relative;
+
+		background-color: @light-bg-color;
+		width: 85%;
+		max-width: 450px;
+		margin: 0 auto;
+		border-radius: 50px;
+		padding: 15px;
+		
+		display: grid;
+		grid-template-columns: 90% 10%;
+	}
+
+	#url-input {
+		background-color: transparent;
+		border: none;
+
+	}
+
+	.url-btn {
+		width: 30px;
+		height: 30px;
 	}
 }

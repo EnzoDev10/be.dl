@@ -101,7 +101,7 @@
 			</div>
 		</header>
 		<main class="yantramanav-light">
-			<div id="modal" class="fira-sans-condensed-light">
+			<div id="modal" class="hidden fira-sans-condensed-light">
 				<div id="thumbnail">
 					<img src="images/thumbnail.svg" alt="" class="remove-this" />
 				</div>
@@ -164,28 +164,30 @@
 
 			<section class="hero">
 				<div class="container">
+					<img src="images/backgrounds/mobile-hero-bg.svg" />
 					<h2 class="oxygen-bold">YoutuBE.dl</h2>
-					<p>
-						Descarga tus videos favoritos de una manera rápida y sencilla, con
-						la tranquilidad de un proceso seguro y libre de complicaciones ni
-						registros. ¡Solo pega el enlace y listo!
-					</p>
+					<div class="steps">
+						<p>Instrucciones</p>
+						<ul>
+							<li>1. Copia el link del video que quieras descargar.</li>
+							<li>2. Pegalo en el casillero de abajo.</li>
+							<li>3. Elige un formato o calidad y presiona descargar.</li>
+							<li>4. Disfruta del video!</li>
+						</ul>
+					</div>
+					<label for="url-input" class="url-label">
+						Pegue aqui el enlace de su video
+					</label>
 					<div class="input-wrapper">
-						<input
-							type="text"
-							id="url-input"
-							placeholder="Pegue aqui el enlace de su video"
-							aria
-						/>
+						<input type="text" id="url-input" />
 						<button
-							class="btn input-btn absolute"
+							class="btn url-btn"
 							id="input-btn"
-							aria-label="Download video"
+							aria-label="Click to download your video"
 						>
 							<img src="images/download-icon.svg" aria-hidden="true" />
 						</button>
 					</div>
-					<p>Descarga videos de youtube solo con un click!</p>
 				</div>
 			</section>
 
