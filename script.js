@@ -1,7 +1,3 @@
-const navBtn = document.querySelector("#mobileMenuToggle");
-const closeBtn = document.querySelector("#closeBtn");
-const disclosure = document.querySelector("#mobileNav");
-
 function openNavigation(toggle, close, menu) {
 	const navBtn = document.getElementById(toggle);
 	const closeBtn = document.getElementById(close);
@@ -32,3 +28,23 @@ function toggleNavigation(toggle, close, menu) {
 		? openNavigation(toggle, close, menu)
 		: closeNavigation(toggle, close, menu);
 }
+
+/* makes the language buttons selectable with tab, only if the menu is open  */
+langBox = document.getElementById("lang-box");
+
+langBox.addEventListener("change", function () {
+	if (this.checked) {
+		langBox.ariaExpanded = "true";
+		langBtns = document.querySelectorAll("button.lang-btn");
+
+		langBtns.forEach((btn) => {
+			btn.disabled = false;
+		});
+	} else {
+		langBox.ariaExpanded = "false";
+
+		langBtns.forEach((btn) => {
+			btn.disabled = true;
+		});
+	}
+});

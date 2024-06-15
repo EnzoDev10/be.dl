@@ -2,7 +2,7 @@
 
 @text-color: #fff;
 /* Used on input and download button  */
-@light-bg-color: #03726e;
+@light-bg-color: rgb(3, 114, 110);
 /* Used on the images of the apps and extension section */
 @dark-bg-color: #002d29;
 /* Used on modal and mobile menu */
@@ -33,6 +33,16 @@ button {
 	background: transparent;
 	border: 0;
 	cursor: pointer;
+	width: fit-content;
+}
+
+input:not(#lang-box),
+button,
+a {
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.5);
+	}
 }
 
 h1 {
@@ -92,8 +102,11 @@ header {
 	}
 }
 
+.mobile-menu-toggle {
+	margin-top: 10px;
+}
+
 .mobile-menu-toggle img {
-	padding-top: 10px;
 	width: 40px;
 	height: 40px;
 }
@@ -112,6 +125,11 @@ header {
 	padding: 20px;
 	margin-top: 30px;
 	border-radius: 10px;
+
+	a {
+		display: block;
+		width: 100%;
+	}
 
 	#closeBtn {
 		position: absolute;
@@ -136,6 +154,7 @@ header {
 			border-left: 0;
 			border-right: 0;
 			border-top: 0;
+			position: relative;
 		}
 
 		.lang-menu {
@@ -145,7 +164,16 @@ header {
 		}
 
 		#lang-box {
-			display: none;
+			position: absolute;
+			appearance: none;
+		}
+
+		#lang-box:focus {
+			outline: none;
+		}
+
+		#lang-box:focus ~ .lang-label {
+			box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.5);
 		}
 
 		#lang-box:checked ~ .lang-label ~ .lang-menu {
@@ -192,16 +220,16 @@ header {
 		max-width: 450px;
 		margin: 0 auto;
 		border-radius: 50px;
-		padding: 15px;
-		
-		display: grid;
-		grid-template-columns: 90% 10%;
 	}
 
 	#url-input {
 		background-color: transparent;
 		border: none;
-
+		width: 100%;
+		height: 100%;
+		padding: 15px;
+		border-radius: 50px;
+		transition: box-shadow 0.5s;
 	}
 
 	.url-btn {
