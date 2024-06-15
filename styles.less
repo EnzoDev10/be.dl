@@ -220,6 +220,7 @@ header {
 		max-width: 450px;
 		margin: 0 auto;
 		border-radius: 50px;
+		margin-top: 40px;
 	}
 
 	#url-input {
@@ -230,6 +231,22 @@ header {
 		padding: 15px;
 		border-radius: 50px;
 		transition: box-shadow 0.5s;
+
+		/* When there is not text in the input, place the label inside */
+		&:placeholder-shown ~ .url-label {
+			cursor: text;
+			top: 13px;
+			color: #bbb;
+		}
+	}
+	/* When there is text inside, the label goes up */
+	.url-label {
+		position: absolute;
+		top: -26px;
+		left: 100px;
+		display: block;
+		transition: 0.3s;
+		color: #fff;
 	}
 
 	.url-btn {
