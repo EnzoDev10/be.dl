@@ -1,13 +1,13 @@
 /* colors */
-/* Used on input and download button  */
 /* Used on the images of the apps and extension section */
 /* Used on modal and mobile menu */
+/* Used on input and download button  */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   color: #fff;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 a {
   text-decoration: none;
@@ -25,8 +25,8 @@ button {
 input:not(#lang-box):focus,
 button:focus,
 a:focus {
-  outline: none;
   box-shadow: 0 0 10px 0.5rem rgba(3, 114, 110, 0.5);
+  outline: none;
 }
 h1 {
   max-width: fit-content;
@@ -43,10 +43,10 @@ ul {
   opacity: 0;
 }
 .container {
-  padding-right: 20px;
-  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
   text-align: center;
 }
 body {
@@ -54,81 +54,81 @@ body {
 }
 /* Header and mobile nav */
 header {
-  position: relative;
   min-height: 80px;
+  position: relative;
 }
 header .container {
+  align-items: start;
   padding-top: 15px;
   padding-bottom: 25px;
-  align-items: start;
   justify-content: flex-end;
 }
 header .logo {
+  left: 50%;
   position: absolute;
   top: 15%;
-  left: 50%;
   transform: translate(-50%);
 }
 header .logo img {
-  width: 60px;
   height: 60px;
+  width: 60px;
 }
 .mobile-menu-toggle {
   margin-top: 10px;
 }
 .mobile-menu-toggle img {
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
 .mobile-nav {
-  background-color: rgba(11, 22, 24, 0.9);
-  text-align: left;
   align-items: center;
-  /* Centers the element and moves it 5% from the top */
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -5%);
-  min-width: 360px;
-  padding: 20px;
-  margin-top: 30px;
+  background-color: rgba(11, 22, 24, 0.9);
   border-radius: 10px;
+  /* Centers the element and moves it 5% from the top */
+  left: 50%;
+  min-width: 360px;
+  margin-top: 30px;
+  padding: 20px;
+  position: absolute;
+  text-align: left;
+  top: 5%;
+  transform: translate(-50%, -5%);
 }
 .mobile-nav a {
   display: block;
   width: 100%;
 }
 .mobile-nav #closeBtn {
-  position: absolute;
-  width: 30px;
   height: auto;
-  top: 20px;
+  position: absolute;
   right: 20px;
+  top: 20px;
+  width: 30px;
 }
 .mobile-nav .menu {
-  width: 100%;
   padding: 10px;
+  width: 100%;
 }
 .mobile-nav .menu .nav-item {
-  margin-bottom: 30px;
-  padding-bottom: 5px;
   border-bottom: url;
-  width: 80%;
   border: 3px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, white, transparent);
   border-left: 0;
   border-right: 0;
   border-top: 0;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
   position: relative;
+  width: 80%;
 }
 .mobile-nav .menu .lang-menu {
   height: 1px;
   width: 1px;
 }
 .mobile-nav .menu #lang-box {
-  position: absolute;
   appearance: none;
+  position: absolute;
 }
 .mobile-nav .menu #lang-box:focus {
   outline: none;
@@ -137,13 +137,13 @@ header .logo img {
   box-shadow: 0 0 10px 0.5rem rgba(3, 114, 110, 0.5);
 }
 .mobile-nav .menu #lang-box:checked ~ .lang-label ~ .lang-menu {
-  width: fit-content;
+  align-items: center;
   height: auto;
+  gap: 10px;
+  margin-left: auto;
   padding: 10px;
   transition: all 1s ease 0s;
-  margin-left: auto;
-  gap: 10px;
-  align-items: center;
+  width: fit-content;
 }
 .mobile-nav .menu #lang-box:checked ~ .lang-label ~ .lang-menu .lang {
   width: 40px;
@@ -162,46 +162,46 @@ header .logo img {
   font-size: 2.5rem;
 }
 .hero .steps {
-  text-align: left;
   margin: 15px 0;
+  text-align: left;
 }
 .hero .input-wrapper {
-  position: relative;
   background-color: #03726e;
-  width: 85%;
-  max-width: 450px;
-  margin: 0 auto;
   border-radius: 50px;
+  margin: 0 auto;
   margin-top: 40px;
+  max-width: 450px;
+  position: relative;
+  width: 85%;
 }
 .hero #url-input {
   background-color: transparent;
   border: none;
-  width: 100%;
+  border-radius: 50px;
   height: 100%;
   padding: 15px;
-  border-radius: 50px;
   transition: box-shadow 0.5s;
+  width: 100%;
   /* When there is not text in the input, place the label inside */
 }
 .hero #url-input:placeholder-shown ~ .url-label {
+  color: #bbb;
   cursor: text;
   top: 13px;
-  color: #bbb;
 }
 .hero .url-label {
-  position: absolute;
-  top: -26px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  transition: 0.3s;
   color: #fff;
+  display: block;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: 0.3s;
+  top: -26px;
   width: 100%;
 }
 .hero .url-btn {
-  width: 30px;
   height: 30px;
+  width: 30px;
 }
 /* Extension */
 #extension {
@@ -213,18 +213,18 @@ header .logo img {
   background-position: center;
   border-radius: 5px;
   box-shadow: inset 0px 0px 15px 15px #000000;
-  padding: 100px 0;
   margin: 80px 0;
+  padding: 100px 0;
 }
 #extension .laptop-img,
 #extension .chrome-img {
   width: 300px;
 }
 #extension .chrome-img:hover {
-  transition: transform 0.5s;
   transform: scale(1.2);
+  transition: transform 0.5s;
 }
 #extension h2 {
-  margin: 50px 0;
   font-size: 2.5rem;
+  margin: 50px 0;
 }
