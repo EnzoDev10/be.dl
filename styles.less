@@ -38,12 +38,24 @@ button {
 }
 
 input:not(#lang-box),
-button,
-a {
+button {
 	&:focus {
-		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.5);
+		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 1);
 		outline: none;
 	}
+}
+
+a {
+	outline: none;
+}
+
+a:not(.nav-link):focus,
+a:not(.nav-link):hover {
+	// ! Add a border on focus and hover
+	border-bottom: 6px solid @light-bg-color;
+	outline: none;
+	transition: all 700ms;
+	font-size: 1.2rem;
 }
 
 h1 {
@@ -138,7 +150,12 @@ header {
 
 	a {
 		display: block;
+		transition: font-size 700ms;
 		width: 100%;
+
+		&:focus {
+			font-size: 1.2rem;
+		}
 	}
 
 	#closeBtn {
@@ -154,8 +171,7 @@ header {
 		width: 100%;
 
 		.nav-item {
-			border-bottom: url;
-			border: 3px solid;
+			border: 4px solid;
 			border-image-slice: 1;
 			border-image-source: linear-gradient(to right, white, transparent);
 			border-left: 0;
@@ -164,9 +180,19 @@ header {
 			margin-bottom: 30px;
 			padding-bottom: 5px;
 			position: relative;
+			transition: border-image-source 700ms;
 			width: 80%;
-		}
 
+			&:focus-within {
+				border-width: 6px;
+				border-image-slice: 1;
+				border-image-source: linear-gradient(
+					to right,
+					@light-bg-color,
+					@light-bg-color
+				);
+			}
+		}
 		.lang-menu {
 			height: 1px;
 			width: 1px;
@@ -182,7 +208,8 @@ header {
 		}
 
 		#lang-box:focus ~ .lang-label {
-			box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.5);
+			font-size: 1.2rem;
+			transition: font-size 700ms;
 		}
 
 		#lang-box:checked ~ .lang-label ~ .lang-menu {
@@ -296,15 +323,14 @@ header {
 /* Footer */
 
 #footer {
-	
 	.container {
-	background: url(images/backgrounds/footer-bg.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding: 100px 0;
-		
-	flex-direction: column;
+		background: url(images/backgrounds/footer-bg.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		padding: 100px 0;
+
+		flex-direction: column;
 		align-items: center;
 		gap: 40px;
 	}

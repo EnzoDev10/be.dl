@@ -17,9 +17,7 @@
 		<header class="fira-sans-condensed-light">
 			<div class="container flex">
 				<h1 class="logo">
-					<a href="/" rel="home"
-						><img src="images/logo.svg" alt="YoutuBE.dl"
-					/></a>
+					<img src="images/logo.svg" alt="YoutuBE.dl" />
 				</h1>
 
 				<button
@@ -30,7 +28,7 @@
 					aria-controls="primaryNav"
 					onclick="toggleNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')"
 				>
-					<img src="images/ham-icon.svg" aria-hidden="true" />
+					<img src="images/icons/ham-icon.svg" aria-hidden="true" />
 				</button>
 
 				<!-- Mobile Nav -->
@@ -42,11 +40,11 @@
 						onclick="closeNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')
 "
 					>
-						<img src="images/close-icon.svg" />
+						<img src="images/icons/close-icon.svg" />
 					</button>
 					<ul class="menu">
-						<li class="nav-item"><a href="#footer">Contacto</a></li>
-						<li class="nav-item"><a href="#extension">Extensión</a></li>
+						<li class="nav-item"><a href="#footer"    class="nav-link">Contacto</a></li>
+						<li class="nav-item"><a href="#extension" class="nav-link">Extensión</a></li>
 						<li class="nav-item">
 							<input
 								type="checkbox"
@@ -56,23 +54,23 @@
 							/>
 							<label for="lang-box" class="lang-label flex">
 								Idiomas
-								<img src="images/arrow.svg" />
+								<img src="images/icons/arrow-icon.svg" />
 							</label>
 							<ul class="lang-menu flex">
 								<!-- Change to buttons and make them functional -->
 								<li class="lang">
 									<button class="lang-btn" disabled>
-										<img src="images/spanish.svg" />
+										<img src="images/icons/spanish.svg" />
 									</button>
 								</li>
 								<li class="lang">
 									<button class="lang-btn" disabled>
-										<img src="images/english.svg" />
+										<img src="images/icons/english.svg" />
 									</button>
 								</li>
 								<li class="lang">
 									<button class="lang-btn" disabled>
-										<img src="images/portuguese.svg" />
+										<img src="images/icons/portuguese.svg" />
 									</button>
 								</li>
 							</ul>
@@ -205,13 +203,17 @@
 						/>
 					</div>
 					<h2 class="yantramanav-medium">En el futuro...</h2>
-					<img src="images/chrome-img.svg" class="chrome-img" alt="Soon we'll make an extension!">
+					<img
+						src="images/chrome-img.svg"
+						class="chrome-img"
+						alt="Soon we'll make an extension!"
+					/>
 				</div>
 			</section>
 		</main>
 		<footer id="footer">
 			<div class="container flex">
-				<div class="card contact ">
+				<div class="card contact">
 					<h4>Contacto</h4>
 					<a href="mailto:beagency@gmail.com">beagency@gmail.com</a>
 				</div>
