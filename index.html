@@ -113,7 +113,9 @@
 				</nav>
 			</div>
 		</header>
+
 		<main class="yantramanav-light">
+			<!-- Download modal -->
 			<div id="dw-modal" class="hidden flex fira-sans-condensed-light">
 				<div id="thumbnail">
 					<img src="images/thumbnail.svg" alt="" class="remove-this" />
@@ -174,8 +176,15 @@
 					<p>duración: <span id="video-length">11:17 minutos</span></p>
 				</div>
 			</div>
+
+			<!-- Error modal -->
 			<div id="error-modal" class="modal flex yantramanav-medium">
-				<img class="warning-img" src="images/icons/warning-icon.svg" alt="" aria-hidden="true" />
+				<img
+					class="warning-img"
+					src="images/icons/warning-icon.svg"
+					alt=""
+					aria-hidden="true"
+				/>
 				<p class="error-header">Algo salió mal!</p>
 
 				<p id="error-message">
@@ -189,10 +198,15 @@
 					onclick="closeNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')
 "
 				>
-					<img src="images/icons/close-icon.svg" aria-label="" aria-hidden="true" />
+					<img
+						src="images/icons/close-icon.svg"
+						aria-label=""
+						aria-hidden="true"
+					/>
 				</button>
 			</div>
 
+			<!-- Hero  -->
 			<section class="hero">
 				<div class="container">
 					<img src="images/backgrounds/mobile-hero-bg.svg" />
@@ -215,6 +229,7 @@
 				</div>
 			</section>
 
+			<!-- About the extension -->
 			<section id="extension">
 				<div class="container">
 					<div class="image-wrapper">
@@ -233,6 +248,8 @@
 				</div>
 			</section>
 		</main>
+
+		<!-- Footer -->
 		<footer id="footer">
 			<div class="container flex">
 				<div class="card contact">
