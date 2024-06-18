@@ -48,3 +48,10 @@ langBox.addEventListener("change", function () {
 		});
 	}
 });
+
+errorModal = document.getElementById("error-modal");
+errorCloseBtn = document.getElementById("errorCloseBtn");
+
+errorCloseBtn.addEventListener("click", function () {
+	errorModal.classList.toggle("hidden");
+});

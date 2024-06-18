@@ -65,6 +65,27 @@ section,
 footer {
   margin: 80px 0;
 }
+.modal {
+  align-items: center;
+  background-color: rgba(11, 22, 24, 0.9);
+  border-radius: 10px;
+  flex-direction: column;
+  /* Centers the element and moves it 5% from the top */
+  left: 50%;
+  min-width: 360px;
+  margin-top: 30px;
+  padding: 20px;
+  position: absolute;
+  top: 5%;
+  transform: translate(-50%, -5%);
+}
+.close {
+  height: auto;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+}
 .image-wrapper,
 #footer {
   box-shadow: inset 0px 20px 8px -8px #000000, inset 0px -20px 8px -8px #000000;
@@ -98,18 +119,7 @@ header .logo img {
   width: 40px;
 }
 .mobile-nav {
-  align-items: center;
-  background-color: rgba(11, 22, 24, 0.9);
-  border-radius: 10px;
-  /* Centers the element and moves it 5% from the top */
-  left: 50%;
-  min-width: 360px;
-  margin-top: 30px;
-  padding: 20px;
-  position: absolute;
   text-align: left;
-  top: 5%;
-  transform: translate(-50%, -5%);
 }
 .mobile-nav a {
   display: block;
@@ -118,13 +128,6 @@ header .logo img {
 }
 .mobile-nav a:focus {
   font-size: 1.2rem;
-}
-.mobile-nav #closeBtn {
-  height: auto;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
 }
 .mobile-nav .menu {
   padding: 10px;
@@ -180,6 +183,19 @@ header .logo img {
 }
 .mobile-nav .menu .lang-label img {
   margin-left: auto;
+}
+/* Modals */
+#error-modal {
+  padding: 40px;
+  text-align: center;
+}
+#error-modal .warning-img {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 5px;
+}
+#error-modal .error-header {
+  margin-bottom: 15px;
 }
 /* Hero */
 .hero {

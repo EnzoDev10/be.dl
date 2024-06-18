@@ -32,10 +32,10 @@
 				</button>
 
 				<!-- Mobile Nav -->
-				<nav id="mobileNav" class="mobile-nav flex hidden">
+				<nav id="mobileNav" class="mobile-nav modal flex hidden">
 					<button
 						id="closeBtn"
-						class="absolute"
+						class="close"
 						aria-label="Click to close menu"
 						onclick="closeNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')
 "
@@ -43,8 +43,12 @@
 						<img src="images/icons/close-icon.svg" />
 					</button>
 					<ul class="menu">
-						<li class="nav-item"><a href="#footer"    class="nav-link">Contacto</a></li>
-						<li class="nav-item"><a href="#extension" class="nav-link">Extensión</a></li>
+						<li class="nav-item">
+							<a href="#footer" class="nav-link">Contacto</a>
+						</li>
+						<li class="nav-item">
+							<a href="#extension" class="nav-link">Extensión</a>
+						</li>
 						<li class="nav-item">
 							<input
 								type="checkbox"
@@ -110,7 +114,7 @@
 			</div>
 		</header>
 		<main class="yantramanav-light">
-			<div id="modal" class="hidden fira-sans-condensed-light">
+			<div id="dw-modal" class="hidden flex fira-sans-condensed-light">
 				<div id="thumbnail">
 					<img src="images/thumbnail.svg" alt="" class="remove-this" />
 				</div>
@@ -169,6 +173,24 @@
 					<p>Tamaño: <span id="video-size">890mb</span></p>
 					<p>duración: <span id="video-length">11:17 minutos</span></p>
 				</div>
+			</div>
+			<div id="error-modal" class="modal flex yantramanav-medium">
+				<img class="warning-img" src="images/icons/warning-icon.svg" alt="" aria-hidden="true" />
+				<p class="error-header">Algo salió mal!</p>
+
+				<p id="error-message">
+					El video no esta o la url es invalida. Por favor, intente nuevamente,
+					o cambie de url.
+				</p>
+				<button
+					id="errorCloseBtn"
+					class="close"
+					aria-label="Click to close error message"
+					onclick="closeNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')
+"
+				>
+					<img src="images/icons/close-icon.svg" aria-label="" aria-hidden="true" />
+				</button>
 			</div>
 
 			<section class="hero">
