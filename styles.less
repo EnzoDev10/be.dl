@@ -35,9 +35,10 @@ button {
 }
 
 input:not(#lang-box),
-button:not(.footer-btn) {
-	&:focus {
-		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 1);
+button:not(.footer-btn),
+.chrome-store {
+	&:focus, &:hover {
+		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.6);
 		outline: none;
 	}
 }
@@ -46,14 +47,6 @@ a,
 button {
 	outline: none;
 }
-
-/* a:not(.nav-link):focus,
-a:not(.nav-link):hover {
-	border-bottom: 6px solid @light-bg-color;
-	outline: none;
-	transition: all 700ms;
-	font-size: 1.2rem;
-} */
 
 h1 {
 	max-width: fit-content;
@@ -312,14 +305,17 @@ header {
 		padding: 100px 0;
 	}
 
-	.laptop-img,
-	.chrome-img {
-		width: 300px;
+	.chrome-store {
+		background-color: @light-bg-color;
+		width: fit-content;
+		margin: 0 auto;
+		padding: 15px;
+		border-radius: 10px;
 	}
 
-	.chrome-img:hover {
-		transform: scale(1.2);
-		transition: transform 0.5s;
+	.laptop-img,
+	.chrome-img {
+		width: 250px;
 	}
 
 	h2 {

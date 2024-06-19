@@ -22,21 +22,18 @@ button {
   width: fit-content;
 }
 input:not(#lang-box):focus,
-button:not(.footer-btn):focus {
-  box-shadow: 0 0 10px 0.5rem #03726e;
+button:not(.footer-btn):focus,
+.chrome-store:focus,
+input:not(#lang-box):hover,
+button:not(.footer-btn):hover,
+.chrome-store:hover {
+  box-shadow: 0 0 10px 0.5rem rgba(3, 114, 110, 0.6);
   outline: none;
 }
 a,
 button {
   outline: none;
 }
-/* a:not(.nav-link):focus,
-a:not(.nav-link):hover {
-	border-bottom: 6px solid @light-bg-color;
-	outline: none;
-	transition: all 700ms;
-	font-size: 1.2rem;
-} */
 h1 {
   max-width: fit-content;
 }
@@ -250,13 +247,16 @@ header .logo img {
   margin: 80px 0;
   padding: 100px 0;
 }
+#extension .chrome-store {
+  background-color: #03726e;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+}
 #extension .laptop-img,
 #extension .chrome-img {
-  width: 300px;
-}
-#extension .chrome-img:hover {
-  transform: scale(1.2);
-  transition: transform 0.5s;
+  width: 250px;
 }
 #extension h2 {
   font-size: 2.5rem;
