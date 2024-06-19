@@ -2,11 +2,8 @@
 
 @body-bg-color: rgba(0, 0, 0, 1);
 
-/* Used on the images of the apps and extension section */
-@dark-bg-color: #002d29;
-
 /* Used on modal and mobile menu */
-@darker-bg-color: rgba(11, 22, 24, 0.9);
+@dark-bg-color: rgba(11, 22, 24, 0.9);
 
 /* Used on input and download button  */
 @light-bg-color: rgb(3, 114, 110);
@@ -38,24 +35,25 @@ button {
 }
 
 input:not(#lang-box),
-button {
+button:not(.footer-btn) {
 	&:focus {
 		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 1);
 		outline: none;
 	}
 }
 
-a {
+a,
+button {
 	outline: none;
 }
 
-a:not(.nav-link):focus,
+/* a:not(.nav-link):focus,
 a:not(.nav-link):hover {
 	border-bottom: 6px solid @light-bg-color;
 	outline: none;
 	transition: all 700ms;
 	font-size: 1.2rem;
-}
+} */
 
 h1 {
 	max-width: fit-content;
@@ -88,14 +86,13 @@ body {
 	background-color: @body-bg-color;
 }
 
-section,
-footer {
+section {
 	margin: 80px 0;
 }
 
 .modal {
 	align-items: center;
-	background-color: @darker-bg-color;
+	background-color: @dark-bg-color;
 	border-radius: 10px;
 	flex-direction: column;
 	/* Centers the element and moves it 5% from the top */
@@ -335,40 +332,48 @@ header {
 
 #footer {
 	.container {
-		background: url(images/backgrounds/footer-bg.svg);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		padding: 100px 0;
+		background-color: @dark-bg-color;
+		border-radius: 10px;
+		display: grid;
+		gap: 20px;
+		grid-template-columns: 1fr 1fr;
 
-		flex-direction: column;
-		align-items: center;
-		gap: 40px;
+		margin: 60px auto;
+		padding: 25px;
+		text-align: left;
+		width: 95%;
+
+		.langs-footer {
+			text-align: right;
+		}
+
+		li {
+			padding: 5px;
+
+			* {
+				padding: 5px;
+				border-radius: 5px;
+				transition: background-color 700ms;
+
+				&:hover {
+					background-color: @light-bg-color;
+				}
+			}
+		}
+
+		button {
+			font-family: inherit;
+			font-weight: 300;
+		}
+
+		a:focus,
+		button:focus {
+			background-color: @light-bg-color;
+		}
+
+		.nav-footer,
+		.extension-footer {
+			margin-top: 10px;
+		}
 	}
-}
-
-.card {
-	background-color: red;
-	height: 200px;
-	margin-bottom: 10px;
-	width: 250px;
-	padding: 0 30px;
-
-	h4 {
-		margin-top: 50px;
-	}
-}
-
-.contact {
-	background: url(images/backgrounds/contact-bg.svg);
-}
-
-.attributions {
-	background: url(images/backgrounds/atr-bg.svg);
-}
-
-.contact,
-.attributions {
-	background-repeat: no-repeat;
-	background-size: cover;
 }
