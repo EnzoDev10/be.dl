@@ -21,6 +21,11 @@ button {
   cursor: pointer;
   width: fit-content;
 }
+input:not(#lang-box),
+button:not(.footer-btn),
+.chrome-store {
+  transition: box-shadow 700ms;
+}
 input:not(#lang-box):focus,
 button:not(.footer-btn):focus,
 .chrome-store:focus,
@@ -249,10 +254,10 @@ header .logo img {
 }
 #extension .chrome-store {
   background-color: #03726e;
-  width: fit-content;
+  border-radius: 10px;
   margin: 0 auto;
   padding: 15px;
-  border-radius: 10px;
+  width: fit-content;
 }
 #extension .laptop-img,
 #extension .chrome-img {

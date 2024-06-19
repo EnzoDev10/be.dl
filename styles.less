@@ -37,6 +37,9 @@ button {
 input:not(#lang-box),
 button:not(.footer-btn),
 .chrome-store {
+	
+	transition: box-shadow 700ms;
+
 	&:focus, &:hover {
 		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.6);
 		outline: none;
@@ -307,10 +310,11 @@ header {
 
 	.chrome-store {
 		background-color: @light-bg-color;
-		width: fit-content;
+		border-radius: 10px;
 		margin: 0 auto;
 		padding: 15px;
-		border-radius: 10px;
+		
+		width: fit-content;
 	}
 
 	.laptop-img,
