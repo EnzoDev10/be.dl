@@ -112,8 +112,8 @@ header .logo img {
   margin-top: 10px;
 }
 .mobile-menu-toggle img {
-  height: 40px;
-  width: 40px;
+  height: auto;
+  width: 45px;
 }
 .mobile-nav {
   text-align: left;
