@@ -30,12 +30,30 @@ function toggleNavigation(toggle, close, menu) {
 }
 
 /* makes the language buttons selectable with tab, only if the menu is open  */
-langBox = document.getElementById("lang-box");
+langBox = document.getElementById("langBox");
 
 langBox.addEventListener("change", function () {
 	if (this.checked) {
-		langBox.ariaExpanded = "true";
+		this.ariaExpanded = "true";
 		langBtns = document.querySelectorAll("button.lang-btn");
+
+		langBtns.forEach((btn) => {
+			btn.disabled = false;
+		});
+	} else {
+		this.ariaExpanded = "false";
+
+		langBtns.forEach((btn) => {
+			btn.disabled = true;
+		});
+	}
+});
+langBoxDesk = document.getElementById("langBoxDesk");
+
+langBoxDesk.addEventListener("change", function () {
+	if (this.checked) {
+		this.ariaExpanded = "true";
+		langBtns = document.querySelectorAll("button.lang-desk");
 
 		langBtns.forEach((btn) => {
 			btn.disabled = false;
@@ -47,7 +65,7 @@ langBox.addEventListener("change", function () {
 			btn.disabled = true;
 		});
 	}
-});
+})
 
 errorModal = document.getElementById("error-modal");
 errorCloseBtn = document.getElementById("errorCloseBtn");

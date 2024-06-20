@@ -8,32 +8,18 @@
   margin: 0;
   padding: 0;
 }
-a {
-  text-decoration: none;
-}
 img {
   max-width: 100%;
   vertical-align: middle;
+}
+a {
+  text-decoration: none;
 }
 button {
   background: transparent;
   border: 0;
   cursor: pointer;
   width: fit-content;
-}
-input:not(#lang-box),
-button:not(.footer-btn),
-.chrome-store {
-  transition: box-shadow 700ms;
-}
-input:not(#lang-box):focus,
-button:not(.footer-btn):focus,
-.chrome-store:focus,
-input:not(#lang-box):hover,
-button:not(.footer-btn):hover,
-.chrome-store:hover {
-  box-shadow: 0 0 10px 0.5rem rgba(3, 114, 110, 0.6);
-  outline: none;
 }
 a,
 button {
@@ -52,6 +38,27 @@ ul {
   display: none;
   height: 0;
   opacity: 0;
+}
+.lang-btn,
+.glow-border {
+  transition: box-shadow 700ms;
+}
+.lang-btn:focus,
+.glow-border:focus,
+.lang-btn:hover,
+.glow-border:hover {
+  box-shadow: 0 0 10px 0.5rem rgba(3, 114, 110, 0.6);
+  outline: none;
+}
+.border-bottom {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, white, transparent);
+  transition: border-image-source 700ms;
+  position: relative;
+}
+.border-bottom:focus-within {
+  border-width: 6px;
+  border-image-slice: 1;
 }
 .container {
   margin-right: auto;
@@ -87,21 +94,52 @@ section {
   top: 20px;
   width: 30px;
 }
+.lang-menu {
+  height: 1px;
+  width: 1px;
+}
+input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+}
+input[type="checkbox"]:focus {
+  outline: none;
+}
+input[type="checkbox"] ~ .lang-label {
+  font-size: 1.2rem;
+  transition: font-size 700ms;
+}
+input[type="checkbox"]:checked ~ .lang-label ~ .lang-menu {
+  align-items: center;
+  height: auto;
+  gap: 10px;
+  padding: 10px;
+  transition: all 1s ease 0s;
+  width: fit-content;
+}
+input[type="checkbox"]:checked ~ .lang-label ~ .lang-menu .lang {
+  width: 40px;
+}
 /* Header and mobile nav */
 header {
   min-height: 80px;
   position: relative;
 }
 header .container {
-  align-items: start;
-  padding-top: 15px;
+  padding-top: 25px;
   padding-bottom: 25px;
+}
+header .container-mobile {
+  align-items: start;
   justify-content: flex-end;
+}
+header .desktop-nav {
+  display: none;
 }
 header .logo {
   left: 50%;
   position: absolute;
-  top: 15%;
+  top: 30%;
   transform: translate(-50%);
 }
 header .logo img {
@@ -126,54 +164,21 @@ header .logo img {
 .mobile-nav a:focus {
   font-size: 1.2rem;
 }
+.mobile-nav .border-bottom {
+  border-bottom: 4px solid;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  width: 80%;
+}
+.mobile-nav .border-bottom:focus-within {
+  border-image-source: linear-gradient(to right, #03726e, transparent);
+}
 .mobile-nav .menu {
   padding: 10px;
   width: 100%;
 }
-.mobile-nav .menu .nav-item {
-  border: 4px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to right, white, transparent);
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin-bottom: 30px;
-  padding-bottom: 5px;
-  position: relative;
-  transition: border-image-source 700ms;
-  width: 80%;
-}
-.mobile-nav .menu .nav-item:focus-within {
-  border-width: 6px;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to right, #03726e, #03726e);
-}
-.mobile-nav .menu .lang-menu {
-  height: 1px;
-  width: 1px;
-}
-.mobile-nav .menu #lang-box {
-  appearance: none;
-  position: absolute;
-}
-.mobile-nav .menu #lang-box:focus {
-  outline: none;
-}
-.mobile-nav .menu #lang-box:focus ~ .lang-label {
-  font-size: 1.2rem;
-  transition: font-size 700ms;
-}
-.mobile-nav .menu #lang-box:checked ~ .lang-label ~ .lang-menu {
-  align-items: center;
-  height: auto;
-  gap: 10px;
+.mobile-nav .menu input[type="checkbox"]:checked ~ .lang-label ~ .lang-menu {
   margin-left: auto;
-  padding: 10px;
-  transition: all 1s ease 0s;
-  width: fit-content;
-}
-.mobile-nav .menu #lang-box:checked ~ .lang-label ~ .lang-menu .lang {
-  width: 40px;
 }
 .mobile-nav .menu .lang-label {
   cursor: pointer;
@@ -304,4 +309,62 @@ header .logo img {
 #footer .container .nav-footer,
 #footer .container .extension-footer {
   margin-top: 10px;
+}
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  header .container-mobile {
+    display: none;
+  }
+  header .desktop-nav {
+    display: block;
+  }
+  header .desktop-nav .flex {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  header .desktop-nav .nav-item:not(.nav-logo) {
+    position: relative;
+    margin-right: 35px;
+  }
+  header .desktop-nav .nav-item:not(.nav-logo) a {
+    font-size: 1.5rem;
+  }
+  header .desktop-nav .border-bottom {
+    border-bottom: 4px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, transparent, white, transparent);
+    padding-bottom: 5px;
+    position: relative;
+    transition: border-image-source 700ms;
+  }
+  header .desktop-nav .border-bottom:focus-within,
+  header .desktop-nav .border-bottom:hover {
+    border-width: 8px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, transparent, #03726e, transparent);
+  }
+  header .desktop-nav .nav-logo {
+    align-items: center;
+    font-size: 2.7rem;
+    gap: 10px;
+    margin-right: auto;
+  }
+  header .desktop-nav .nav-logo .logo {
+    position: static;
+    transform: translate(0px);
+  }
+  header .desktop-nav #langBoxDesk:focus ~ .lang-label > #current-lang {
+    box-shadow: 0 0 10px 0.5rem rgba(3, 114, 110, 0.6);
+  }
+  header .desktop-nav #langBoxDesk:checked ~ .lang-label ~ .lang-menu {
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+  }
+  header .desktop-nav .lang-label {
+    margin-right: 10px;
+  }
+  header .desktop-nav .arrow {
+    margin-right: 5px;
+  }
 }

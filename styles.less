@@ -18,13 +18,13 @@
 	padding: 0;
 }
 
-a {
-	text-decoration: none;
-}
-
 img {
 	max-width: 100%;
 	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
 }
 
 button {
@@ -32,18 +32,6 @@ button {
 	border: 0;
 	cursor: pointer;
 	width: fit-content;
-}
-
-input:not(#lang-box),
-button:not(.footer-btn),
-.chrome-store {
-	transition: box-shadow 700ms;
-
-	&:focus,
-	&:hover {
-		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.6);
-		outline: none;
-	}
 }
 
 a,
@@ -67,6 +55,30 @@ ul {
 	display: none;
 	height: 0;
 	opacity: 0;
+}
+
+.lang-btn,
+.glow-border {
+	transition: box-shadow 700ms;
+
+	&:focus,
+	&:hover {
+		box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.6);
+		outline: none;
+	}
+}
+
+.border-bottom {
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, white, transparent);
+	transition: border-image-source 700ms;
+
+	position: relative;
+
+	&:focus-within {
+		border-width: 6px;
+		border-image-slice: 1;
+	}
 }
 
 .container {
@@ -109,22 +121,62 @@ section {
 	width: 30px;
 }
 
+.lang-menu {
+	height: 1px;
+	width: 1px;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	position: absolute;
+}
+
+input[type="checkbox"]:focus {
+	outline: none;
+}
+
+input[type="checkbox"] ~ .lang-label {
+	font-size: 1.2rem;
+	transition: font-size 700ms;
+}
+
+input[type="checkbox"]:checked ~ .lang-label ~ .lang-menu {
+	align-items: center;
+	height: auto;
+	gap: 10px;
+	padding: 10px;
+
+	transition: all 1s ease 0s;
+	width: fit-content;
+
+	.lang {
+		width: 40px;
+	}
+}
+
 /* Header and mobile nav */
 header {
 	min-height: 80px;
 	position: relative;
 
 	.container {
-		align-items: start;
-		padding-top: 15px;
+		padding-top: 25px;
 		padding-bottom: 25px;
+	}
+
+	.container-mobile {
+		align-items: start;
 		justify-content: flex-end;
+	}
+
+	.desktop-nav {
+		display: none;
 	}
 
 	.logo {
 		left: 50%;
 		position: absolute;
-		top: 15%;
+		top: 30%;
 		transform: translate(-50%);
 
 		img {
@@ -154,64 +206,27 @@ header {
 		}
 	}
 
+	.border-bottom {
+		border-bottom: 4px solid;
+		margin-bottom: 30px;
+		padding-bottom: 5px;
+		width: 80%;
+
+		&:focus-within {
+			border-image-source: linear-gradient(
+				to right,
+				@light-bg-color,
+				transparent
+			);
+		}
+	}
+
 	.menu {
 		padding: 10px;
 		width: 100%;
 
-		.nav-item {
-			border: 4px solid;
-			border-image-slice: 1;
-			border-image-source: linear-gradient(to right, white, transparent);
-			border-left: 0;
-			border-right: 0;
-			border-top: 0;
-			margin-bottom: 30px;
-			padding-bottom: 5px;
-			position: relative;
-			transition: border-image-source 700ms;
-			width: 80%;
-
-			&:focus-within {
-				border-width: 6px;
-				border-image-slice: 1;
-				border-image-source: linear-gradient(
-					to right,
-					@light-bg-color,
-					@light-bg-color
-				);
-			}
-		}
-		.lang-menu {
-			height: 1px;
-			width: 1px;
-		}
-
-		#lang-box {
-			appearance: none;
-			position: absolute;
-		}
-
-		#lang-box:focus {
-			outline: none;
-		}
-
-		#lang-box:focus ~ .lang-label {
-			font-size: 1.2rem;
-			transition: font-size 700ms;
-		}
-
-		#lang-box:checked ~ .lang-label ~ .lang-menu {
-			align-items: center;
-			height: auto;
-			gap: 10px;
+		input[type="checkbox"]:checked ~ .lang-label ~ .lang-menu {
 			margin-left: auto;
-			padding: 10px;
-			transition: all 1s ease 0s;
-			width: fit-content;
-
-			.lang {
-				width: 40px;
-			}
 		}
 
 		.lang-label {
@@ -374,6 +389,92 @@ header {
 		.nav-footer,
 		.extension-footer {
 			margin-top: 10px;
+		}
+	}
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+	header {
+		.container-mobile {
+			display: none;
+		}
+
+		.desktop-nav {
+			display: block;
+
+			.flex {
+				justify-content: flex-end;
+				align-items: center;
+			}
+
+			.nav-item:not(.nav-logo) {
+				position: relative;
+				margin-right: 35px;
+
+				a {
+					font-size: 1.5rem;
+				}
+			}
+
+			.border-bottom {
+				border-bottom: 4px solid;
+				border-image-slice: 1;
+				border-image-source: linear-gradient(
+					to right,
+					transparent,
+					white,
+					transparent
+				);
+
+				padding-bottom: 5px;
+				position: relative;
+				transition: border-image-source 700ms;
+
+				&:focus-within,
+				&:hover {
+					border-width: 8px;
+					border-image-slice: 1;
+					border-image-source: linear-gradient(
+						to right,
+						transparent,
+						@light-bg-color,
+						transparent
+					);
+				}
+			}
+
+			.nav-logo {
+				align-items: center;
+				font-size: 2.7rem;
+				gap: 10px;
+				margin-right: auto;
+
+				.logo {
+					position: static;
+					transform: translate(0px);
+				}
+			}
+
+			#langBoxDesk:focus ~.lang-label > #current-lang {
+				box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.6);
+
+			}
+
+			#langBoxDesk:checked ~ .lang-label ~ .lang-menu {
+				position: absolute;
+				right: 0;
+				flex-direction: column;
+			}
+
+			.lang-label {
+				margin-right: 10px;
+			}
+
+			.arrow {
+				margin-right: 5px;
+			}
 		}
 	}
 }
