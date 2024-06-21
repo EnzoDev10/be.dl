@@ -396,10 +396,16 @@ header {
 /* Desktop */
 
 @media screen and (min-width: 1024px) {
+	
+	.container {
+		padding: 25px 50px;
+	}
+	
 	header {
 		.container-mobile {
 			display: none;
 		}
+
 
 		.desktop-nav {
 			display: block;
@@ -409,13 +415,15 @@ header {
 				align-items: center;
 			}
 
-			.nav-item:not(.nav-logo) {
+			.nav-item:not(.nav-logo,.last-item)
+			 {
 				position: relative;
 				margin-right: 35px;
 
-				a {
-					font-size: 1.5rem;
-				}
+			}
+
+			a {
+				font-size: 1.5rem;
 			}
 
 			.border-bottom {

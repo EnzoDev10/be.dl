@@ -312,6 +312,9 @@ header .logo img {
 }
 /* Desktop */
 @media screen and (min-width: 1024px) {
+  .container {
+    padding: 25px 50px;
+  }
   header .container-mobile {
     display: none;
   }
@@ -322,11 +325,11 @@ header .logo img {
     justify-content: flex-end;
     align-items: center;
   }
-  header .desktop-nav .nav-item:not(.nav-logo) {
+  header .desktop-nav .nav-item:not(.nav-logo,.last-item) {
     position: relative;
     margin-right: 35px;
   }
-  header .desktop-nav .nav-item:not(.nav-logo) a {
+  header .desktop-nav a {
     font-size: 1.5rem;
   }
   header .desktop-nav .border-bottom {
