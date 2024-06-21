@@ -280,7 +280,7 @@ header .logo img {
   border-radius: 10px;
   display: grid;
   gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   margin: 60px auto;
   padding: 25px;
   text-align: left;
@@ -302,6 +302,7 @@ header .logo img {
 }
 #footer .container button {
   font-family: inherit;
+  font-size: inherit;
   font-weight: 300;
 }
 #footer .container a:focus,
@@ -415,5 +416,17 @@ header .logo img {
   #extension .laptop-img,
   #extension .chrome-img {
     width: auto;
+  }
+  #footer .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #footer .container .langs-footer {
+    text-align: left;
+  }
+  #footer .container .footer-header {
+    font-size: 1.5rem;
+  }
+  #footer .container li:not(.footer-header) {
+    font-size: 1.3rem;
   }
 }

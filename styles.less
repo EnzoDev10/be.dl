@@ -359,15 +359,17 @@ header {
 		border-radius: 10px;
 		display: grid;
 		gap: 20px;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, 1fr);
 
 		margin: 60px auto;
 		padding: 25px;
 		text-align: left;
 		width: 95%;
 
+
 		.langs-footer {
 			text-align: right;
+			
 		}
 
 		li {
@@ -386,6 +388,7 @@ header {
 
 		button {
 			font-family: inherit;
+			font-size: inherit;
 			font-weight: 300;
 		}
 
@@ -544,6 +547,24 @@ header {
 		.laptop-img,
 		.chrome-img {
 			width: auto;
+		}
+	}
+
+	#footer {
+		.container {
+			grid-template-columns: repeat(3, 1fr);
+
+			.langs-footer {
+				text-align: left;
+			}
+
+			.footer-header {
+				font-size: 1.5rem;
+			}
+
+			li:not(.footer-header) {
+				font-size: 1.3rem;
+			}
 		}
 	}
 }
