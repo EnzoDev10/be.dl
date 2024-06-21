@@ -263,6 +263,9 @@ header .logo img {
   padding: 15px;
   width: fit-content;
 }
+#extension .store-container {
+  flex-direction: column;
+}
 #extension .laptop-img,
 #extension .chrome-img {
   width: 250px;
@@ -373,7 +376,6 @@ header .logo img {
   /* Hero */
   .hero {
     position: relative;
-    /* * fix the label to be on the center of the input */
   }
   .hero .container {
     font-size: 1.2rem;
@@ -399,5 +401,19 @@ header .logo img {
     right: 0;
     height: 140%;
     z-index: -1;
+  }
+  #extension .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #extension h2 {
+    font-size: 3rem;
+  }
+  #extension .store-container {
+    justify-content: center;
+  }
+  #extension .laptop-img,
+  #extension .chrome-img {
+    width: auto;
   }
 }

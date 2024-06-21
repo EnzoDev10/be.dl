@@ -336,6 +336,10 @@ header {
 		width: fit-content;
 	}
 
+	.store-container {
+		flex-direction: column;
+	}
+
 	.laptop-img,
 	.chrome-img {
 		width: 250px;
@@ -504,9 +508,9 @@ header {
 
 		.input-wrapper {
 			margin-left: 0;
-			max-width:none;
+			max-width: none;
 			text-align: center;
-			width:100%;
+			width: 100%;
 		}
 
 		#url-input:placeholder-shown ~ .url-label {
@@ -521,7 +525,25 @@ header {
 			height: 140%;
 			z-index: -1;
 		}
+	}
 
-		/* * fix the label to be on the center of the input */
+	#extension {
+		.container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		h2 {
+			font-size: 3rem;
+		}
+
+		.store-container {
+			justify-content: center;
+		}
+
+		.laptop-img,
+		.chrome-img {
+			width: auto;
+		}
 	}
 }
