@@ -13,7 +13,6 @@
 * {
 	box-sizing: border-box;
 	color: @text-color;
-	font-size: 16px;
 	margin: 0;
 	padding: 0;
 }
@@ -258,21 +257,29 @@ header {
 /* Hero */
 
 .hero {
+	.container.flex {
+		flex-direction: column;
+	}
+
 	h2 {
 		font-size: 2.5rem;
 	}
+	p {
+		margin: 15px 0;
+	}
 
 	.steps {
-		margin: 15px 0;
 		text-align: left;
+		margin-bottom: 40px;
 	}
 
 	.input-wrapper {
 		background-color: @light-bg-color;
 		border-radius: 50px;
-		margin: 0 auto;
-		margin-top: 40px;
+		align-self: center;
+
 		max-width: 450px;
+		padding: 5px 0;
 		position: relative;
 		width: 85%;
 	}
@@ -288,18 +295,15 @@ header {
 
 		/* When there is not text in the input, place the label inside */
 		&:placeholder-shown ~ .url-label {
-			color: #bbb;
 			cursor: text;
-			top: 13px;
+			top: 20px;
 		}
 	}
-	/* When there is text inside, the label goes up */
 	.url-label {
-		color: #fff;
+		color: #ddd;
 		display: block;
-		left: 50%;
 		position: absolute;
-		transform: translateX(-50%);
+
 		transition: 0.3s;
 		top: -26px;
 		width: 100%;
@@ -396,16 +400,15 @@ header {
 /* Desktop */
 
 @media screen and (min-width: 1024px) {
-	
 	.container {
 		padding: 25px 50px;
 	}
-	
+
+	/* Header */
 	header {
 		.container-mobile {
 			display: none;
 		}
-
 
 		.desktop-nav {
 			display: block;
@@ -415,11 +418,9 @@ header {
 				align-items: center;
 			}
 
-			.nav-item:not(.nav-logo,.last-item)
-			 {
+			.nav-item:not(.nav-logo, .last-item) {
 				position: relative;
 				margin-right: 35px;
-
 			}
 
 			a {
@@ -465,9 +466,8 @@ header {
 				}
 			}
 
-			#langBoxDesk:focus ~.lang-label > #current-lang {
+			#langBoxDesk:focus ~ .lang-label > #current-lang {
 				box-shadow: 0 0 10px 0.5rem rgba(@light-bg-color, 0.6);
-
 			}
 
 			#langBoxDesk:checked ~ .lang-label ~ .lang-menu {
@@ -484,5 +484,44 @@ header {
 				margin-right: 5px;
 			}
 		}
+	}
+
+	/* Hero */
+
+	.hero {
+		position: relative;
+
+		.container {
+			font-size: 1.2rem;
+			margin-left: initial;
+			text-align: left;
+			width: 50%;
+		}
+
+		h2 {
+			font-size: 3rem;
+		}
+
+		.input-wrapper {
+			margin-left: 0;
+			max-width:none;
+			text-align: center;
+			width:100%;
+		}
+
+		#url-input:placeholder-shown ~ .url-label {
+			top: 16px;
+		}
+
+		.bg-hero {
+			position: absolute;
+			top: -100px;
+			right: 0;
+
+			height: 140%;
+			z-index: -1;
+		}
+
+		/* * fix the label to be on the center of the input */
 	}
 }
