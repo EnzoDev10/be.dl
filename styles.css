@@ -413,9 +413,11 @@ header .logo img {
   #extension .store-container {
     justify-content: center;
   }
-  #extension .laptop-img,
-  #extension .chrome-img {
+  #extension .laptop-img {
     width: auto;
+  }
+  #extension .chrome-img {
+    width: 400px;
   }
   #footer .container {
     grid-template-columns: repeat(3, 1fr);
