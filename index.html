@@ -32,7 +32,6 @@
 						aria-label="click to open menu"
 						aria-expanded="false"
 						aria-controls="primaryNav"
-						onclick="toggleNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')"
 					>
 						<img src="images/icons/ham-icon.svg" aria-hidden="true" />
 					</button>
@@ -47,27 +46,27 @@
 							<li class="nav-item border-bottom">
 								<input
 									type="checkbox"
-									id="langBox"
+									id="langBoxMob"
 									aria-expanded="false"
 									aria-label="Click to open language menu"
 								/>
-								<label for="langBox" class="lang-label flex">
+								<label for="langBoxMob" class="lang-label flex">
 									Idiomas
 									<img src="images/icons/arrow-icon.svg" />
 								</label>
 								<ul class="lang-menu flex">
 									<li class="lang">
-										<button class="lang-btn" disabled>
+										<button class="lang-btn lang-mob" disabled>
 											<img src="images/icons/spanish.svg" />
 										</button>
 									</li>
 									<li class="lang">
-										<button class="lang-btn" disabled>
+										<button class="lang-btn lang-mob" disabled>
 											<img src="images/icons/english.svg" />
 										</button>
 									</li>
 									<li class="lang">
-										<button class="lang-btn" disabled>
+										<button class="lang-btn lang-mob" disabled>
 											<img src="images/icons/portuguese.svg" />
 										</button>
 									</li>
@@ -78,7 +77,6 @@
 							id="closeBtn"
 							class="close glow-border"
 							aria-label="Click to close menu"
-							onclick="closeNavigation('mobileMenuToggle', 'closeBtn', 'mobileNav')
 				"
 						>
 							<img src="images/icons/close-icon.svg" />
@@ -138,14 +136,18 @@
 			<!-- Download modal -->
 			<div id="dw-modal" class="hidden flex fira-sans-condensed-light">
 				<div id="thumbnail">
-					<img src="images/thumbnail.svg" alt="" class="remove-this" />
+					<img src="images/dw-modal/thumbnail.svg" alt="" class="remove-this" />
 				</div>
 				<p id="video-title">
 					Criminólogo da las claves de por qué actualmente NO hay asesinos en
 					serie
 				</p>
 
-				<img src="images/channel-preview.svg" alt="" class="remove-this" />
+				<img
+					src="images/dw-modal/channel-preview.svg"
+					alt=""
+					class="remove-this"
+				/>
 
 				<div class="author-channel">
 					<div class="round" id="author-profile"></div>
@@ -187,7 +189,7 @@
 
 					<button class="download-btn btn">
 						Descargar
-						<img src="images/download-icon.svg" />
+						<img src="images/dw-modal/download-icon.svg" />
 					</button>
 				</div>
 				<div class="video-info">

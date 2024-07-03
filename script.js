@@ -1,3 +1,12 @@
+let mobileMenuClose = document.getElementById("closeBtn");
+let mobileMenuOpen = document.getElementById("mobileMenuToggle");
+
+let langBoxDesk = document.getElementById("langBoxDesk");
+let langBoxMob = document.getElementById("langBoxMob");
+
+let errorModal = document.getElementById("error-modal");
+let errorCloseBtn = document.getElementById("errorCloseBtn");
+
 function openNavigation(toggle, close, menu) {
 	const navBtn = document.getElementById(toggle);
 	const closeBtn = document.getElementById(close);
@@ -20,55 +29,44 @@ function closeNavigation(toggle, close, menu) {
 	closeBtn.classList.add("hidden");
 }
 
-// If the menu is closed, it opens, else, it closes.
-function toggleNavigation(toggle, close, menu) {
-	const open = document.getElementById(toggle).getAttribute("aria-expanded");
+/* Hides the language buttons when the menu is closed
+to prevent a visual bug while using tab
+*/
 
-	open === "false"
-		? openNavigation(toggle, close, menu)
-		: closeNavigation(toggle, close, menu);
+function hideFromTab(event, btnsClass) {
+	let checkbox = document.getElementById(event.target.id);
+	let langBtns = document.querySelectorAll(btnsClass);
+
+	if (checkbox.checked) {
+		checkbox.ariaExpanded = "true";
+
+		langBtns.forEach((btn) => {
+			btn.disabled = false;
+		});
+	} else {
+		checkbox.ariaExpanded = "false";
+
+		langBtns.forEach((btn) => {
+			btn.disabled = true;
+		});
+	}
 }
 
-/* makes the language buttons selectable with tab, only if the menu is open  */
-langBox = document.getElementById("langBox");
-
-langBox.addEventListener("change", function () {
-	if (this.checked) {
-		this.ariaExpanded = "true";
-		langBtns = document.querySelectorAll("button.lang-btn");
-
-		langBtns.forEach((btn) => {
-			btn.disabled = false;
-		});
-	} else {
-		this.ariaExpanded = "false";
-
-		langBtns.forEach((btn) => {
-			btn.disabled = true;
-		});
-	}
+langBoxMob.addEventListener("change", function (event) {
+	hideFromTab(event, ".lang-mob");
 });
-langBoxDesk = document.getElementById("langBoxDesk");
 
-langBoxDesk.addEventListener("change", function () {
-	if (this.checked) {
-		this.ariaExpanded = "true";
-		langBtns = document.querySelectorAll("button.lang-desk");
+langBoxDesk.addEventListener("change", function (event) {
+	hideFromTab(event, ".lang-desk");
+});
 
-		langBtns.forEach((btn) => {
-			btn.disabled = false;
-		});
-	} else {
-		langBox.ariaExpanded = "false";
+mobileMenuOpen.addEventListener("click", () => {
+	openNavigation("mobileMenuToggle", "closeBtn", "mobileNav");
+});
 
-		langBtns.forEach((btn) => {
-			btn.disabled = true;
-		});
-	}
-})
-
-errorModal = document.getElementById("error-modal");
-errorCloseBtn = document.getElementById("errorCloseBtn");
+mobileMenuClose.addEventListener("click", () => {
+	closeNavigation("mobileMenuToggle", "closeBtn", "mobileNav");
+});
 
 errorCloseBtn.addEventListener("click", function () {
 	errorModal.classList.toggle("hidden");
